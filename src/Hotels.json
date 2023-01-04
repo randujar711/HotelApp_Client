@@ -1,0 +1,92 @@
+{
+    "hotels": [
+        {
+            "id": 1,
+            "name": "Motel 9 3/4",
+            "broom_rating": 5,
+            "address": "38 djdjd",
+            "latitude": 40.752655,
+            "longitude": -73.977296,
+            "price": 300,
+            "rooms": 100,
+            "rooms_available": 21
+        },
+        {
+            "id": 2,
+            "name": "The Shrieking Shack",
+            "broom_rating": 3,
+            "address": "3 ojhfsf",
+            "latitude": 40.719566,
+            "longitude": -74.006612,
+            "price": 150,
+            "rooms": 13,
+            "rooms_available": 12
+        },
+        {
+            "id": 3,
+            "name": "The SlytherInn",
+            "broom_rating": 4,
+            "address": "48 jhdfsh",
+            "latitude": 40.769862,
+            "longitude": -73.972474,
+            "price": 177,
+            "rooms": 130,
+            "rooms_available": 66
+        },
+        {
+            "id": 4,
+            "name": "The Leaky Cauldron",
+            "broom_rating": 5,
+            "address": "38 djdjd",
+            "latitude": 40.705554,
+            "longitude": -74.013444,
+            "price": 300,
+            "rooms": 50,
+            "rooms_available": 17
+        },
+        {
+            "id": 5,
+            "name": "Wizard's Way",
+            "broom_rating": 5,
+            "address": "38 djdjd",
+            "latitude": 40.711449,
+            "longitude": -74.013855,
+            "price": 127,
+            "rooms": 100,
+            "rooms_available": 20
+        },
+        {
+            "id": 6,
+            "name": "Hagrid's Quality Hut",
+            "broom_rating": 5,
+            "address": "38 djdjd",
+            "latitude": 40.71058,
+            "longitude": -73.9264,
+            "price": 125,
+            "rooms": 200,
+            "rooms_available": 0
+        },
+        {
+            "id": 7,
+            "name": "the 4 Broomsticks",
+            "broom_rating": 2,
+            "address": "38 djdjd",
+            "latitude": 40.714646,
+            "longitude": -73.996809,
+            "price": 125,
+            "rooms": 150,
+            "rooms_available": 0
+        },
+        {
+            "id": 8,
+            "name": "the Night Bus",
+            "broom_rating": 5,
+            "address": "38 djdjd",
+            "latitude": 40.779437,
+            "longitude": -73.963244,
+            "price": 200,
+            "rooms": 150,
+            "rooms_available": 10
+        }
+    ]
+}
