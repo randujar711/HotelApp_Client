@@ -45,6 +45,7 @@ useEffect(()=> {
                     <p>{hotel.broom_rating}</p>
                   </div>
                 </div>
+                
                 <ul>
                   <li>{hotel.address}</li>
                   <li>{hotel.available}</li>
