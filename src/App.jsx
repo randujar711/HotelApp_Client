@@ -32,9 +32,12 @@ useEffect(()=> {
 
   return (
 
-    <div class="cont" style={{display: "flex", height: "100vh", width: "100%", justifyContent: "center", alignItems: 'center', padding: "0"}}>
-      <div style ={{ width: '45%', background: 'aqua', height: '90%', display: 'flex', flexDirection: 'column'}}>
-        {
+    <div class="cont" >
+      <div class="info-cont" style ={{ width: '45%', background: '#fff', height: '90%', display: 'flex', flexDirection: 'column', borderRadius: '10px'}}>
+        <div>
+          <img src="" alt="" />
+        </div>
+        {/* {
           popInfo.map((hotel)=> {
             return(
               <>
@@ -54,13 +57,13 @@ useEffect(()=> {
               </>
             )
           })
-        }
+        } */}
       </div>
 
       <MapContainer
         center ={center}
         zoom = {10}
-        style={{width: "45%", height: "90%"}}
+        style={{width: "35%", height: "60%", borderRadius: '10px'}}
       >
         <TileLayer
           url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'

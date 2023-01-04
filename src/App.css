@@ -1,3 +1,24 @@
 #map {
   height: 180px;
 }
+body {
+  margin: 0;
+}
+body .cont{
+  display: flex;
+  height: 100vh; 
+  width: 100%;
+  gap: 3%;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background: #224952;
+}
+
+/* body .cont .info-cont{
+  width: '45%';
+  background: 'aqua'; 
+  height: '90%';
+  display: 'flex'; 
+  flex-direction: 'column'
+} */
