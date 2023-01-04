@@ -6,7 +6,6 @@ import {
   CircleMarker, 
   Popup 
 } from "react-leaflet";
-
 import 'leaflet/dist/leaflet.css'
 import './App.css'
 const center = [40.907130587496844, -73.86076354749547]   
@@ -19,7 +18,7 @@ function App() {
 useEffect(()=> {
   const request = async () => {
     let req = await fetch (`hotels4.p.rapidapi.com`, {
-      headers: { 
+      headers: {
         'X-RapidAPI-Key': '33b0d003a4msh556d9bfdbba56d1p1a5ff9jsnea35eb56d6f0'
       }
     })
@@ -32,10 +31,22 @@ useEffect(()=> {
 
   return (
 
-    <div class="cont" >
-      <div class="info-cont" style ={{ width: '45%', background: '#fff', height: '90%', display: 'flex', flexDirection: 'column', borderRadius: '10px'}}>
-        <div>
+    <div className="cont" >
+      <input type="checkbox" name="" id="check"/>
+      <div className="menu-container" style={{zIndex: '1000'}}>
+        <label for="check">
+          <span className="menu fas fa-times" id="times"></span>
+          <span className="menu fa-solid fa-bars" id="bar"></span>
+        </label>
+        <div style={{width: '100%', height: '40%', background: 'red'}}>
+
+        </div>
+      </div>
+
+      <div className="info-cont" style ={{ width: '45%', background: '#fff', height: '90%', display: 'flex', flexDirection: 'column', borderRadius: '10px', alignItems: 'center'}}>
+        <div className='info-head' style={{width: '98%', height: '30%', background: 'red', borderRadius: '10px'}}>
           <img src="" alt="" />
+          <p></p>
         </div>
         {/* {
           popInfo.map((hotel)=> {
