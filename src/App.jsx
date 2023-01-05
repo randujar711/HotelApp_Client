@@ -13,6 +13,7 @@ const center = [40.8116, -73.9465]
 function App() {
   const [data, setData] = useState(hotels)
   const [popInfo, setPopInfo] = useState([])
+  
   const addHotel = (info) => {
     if (popInfo.includes(info)) return
     setPopInfo([...popInfo, info])
