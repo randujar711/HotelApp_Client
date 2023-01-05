@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 //import data from './data.json'
-import { 
-  MapContainer, 
+import {
+  MapContainer,
   TileLayer,
-  Marker, 
-  Popup 
+  Marker,
+  Popup
 } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import { hotels } from './Hotels.json'
 import './App.css'
+
 const center = [40.8116, -73.9465]   
 
 function App() {
@@ -27,11 +28,10 @@ function App() {
 
   const addHotel = (info) => {
      if(popInfo.includes(info)) return
-    setPopInfo([...popInfo, info])
+     setPopInfo([...popInfo, info])
   }
   console.log(popInfo)
   return (
-
     <div className="cont" >
 
     {/* ----  Menu-slider ---- */}
@@ -91,7 +91,6 @@ function App() {
           })
         }
       </div>
-
       <MapContainer
         center ={center}
         zoom = {10.5}
@@ -112,9 +111,7 @@ function App() {
            })
         }
       </MapContainer>
-
     </div>
   )
 }
-
 export default App
