@@ -7,23 +7,24 @@ import {
   Popup 
 } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
+import { hotels } from './Hotels.json'
 import './App.css'
 import Navbar from './Navbar';
 const center = [40.8116, -73.9465]   
 
 function App() {
 
+  const [data, setData] = useState(hotels)
   const [popInfo, setPopInfo] = useState([])
-  const [data, setData] = useState([])
 
   useEffect(()=> {
     let ws;
     const request = async() => {
       let req = await fetch('http://127.0.0.1:3000/hotels')
       let res = await req.json()
-      setData(res)
+      console.log(res)
     }
-    
+
     const connect = async () => {
       ws = new WebSocket("ws://localhost:3000/cable")
 
@@ -42,7 +43,6 @@ function App() {
           }
         }
     }
-    
     connect()
     request()
   }, [])
@@ -52,78 +52,81 @@ function App() {
     setPopInfo([...popInfo, info])
   }
   console.log(popInfo)
-
-
   return (
-    
-    <div className="cont" >
 
+    <div className="cont" >
       <Navbar />
 
     {/* ----  Menu-slider ---- */}
-
       <input type="checkbox" name="" id="check"/>
       <div className="menu-container" style={{zIndex: '1000', height: '95%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
         <label for="check">
           <span className="menu fas fa-times" id="times"></span>
           <span className="menu fa-solid fa-bars" id="bar"></span>
         </label>
-          {
-            popInfo.map((hotel) => {
-              return(
-                <>
-                  <div style={{width: '100%', height: '35%', background: 'red'}}>
-                    {/* <img src={hotel.image} alt="" /> */}
-                  </div>
-                  <div style={{width: '100%', height: '55%', background: 'blue', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <ul style={{padding: '0'}}>
-                      <li>{hotel.name}</li>
-                      <li>{hotel.address}</li>
-                      <li>{hotel.rooms_available}</li>
-                      <li>{hotel.broom_rating}</li>
-                    </ul>
-                  </div>
-                </>
-                
-              )
-            })
-          }
+        {
+          popInfo.map((hotel) => {
+            {/* {const coordinates = hotel.coordinates.map(())} */}
+            return(
+              <>
+                <div style={{width: '100%', height: '35%', background: 'red'}}>
+                  {/* <img src={hotel.image} alt="" /> */}
+                </div>
+                <div style={{width: '100%', height: '55%', background: 'blue', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  <ul style={{padding: '0'}}>
+                    <li>{hotel.name}</li>
+                    <li>{hotel.address}</li>
+                    <li>{hotel.rooms_available}</li>
+                    <li>{hotel.price}</li>
+                    <li>{hotel.rooms_available}</li>
+                    <li>{hotel.broom_rating}</li>
+                  </ul>
+                </div>
+              </>
+              
+            )
+          })
+        }
       </div>
-
     {/* ----  Menu-slider Ends---- */}
 
       <div className="info-cont" style ={{ width: '35%', background: '#fff', height: '60%', display: 'flex', flexDirection: 'column', borderRadius: '10px', alignItems: 'center'}}>
-          {
-            popInfo.map((hotel)=> {
-              return(
-                <>
-                  <div className='info-head' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '98%', height: '30%', background: 'red', borderRadius: '10px'}}>
+        {
+          popInfo.map((hotel)=> {
+            return(
+              <>
+                <div className='info-head' style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '98%', height: '30%', background: 'red', borderRadius: '10px'}}>
 
-                    {/* <img src="" alt="" /> */}
-                    <div style={{display: 'flex'}}>
-                      {/* <img src="" alt="use a png" /> */}
-                      <p>{hotel.broom_rating}</p>
-                    </div>
-                    
+                  {/* <img src="" alt="" /> */}
+                  <div style={{display: 'flex'}}>
+                    {/* <img src="" alt="use a png" /> */}
+                    <p>{hotel.broom_rating}</p>
                   </div>
-                  <ul>
-                    <li>{hotel.address}</li>
-                    <li>{hotel.rooms_available}</li>
-                    <li>{hotel.name}</li>
-                  </ul>
-                </>
-              )
-            })
-          }
+                  
+                </div>
+                <ul>
+                  <li>{hotel.address}</li>
+                  <li>{hotel.rooms_available}</li>
+                  <li>{hotel.name}</li>
+                </ul>
+              </>
+            )
+          })
+        }
       </div>
 
-      <MapContainer center ={center} zoom = {10.5} style={{width: "45%", height: "90%", borderRadius: '10px'}}>
-        <TileLayer url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'/>
+      <MapContainer
+        center ={center}
+        zoom = {10.5}
+        style={{width: "45%", height: "90%", borderRadius: '10px'}}
+      >
+        <TileLayer
+          url='https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
+        />
         {
            data.map((location)=> {
-            const coordinates = [location.latitude, location.longitude]
             return(
-              <Marker position={coordinates}>
+              <Marker position={location.coordinate}>
                   <Popup>
                     <div className='popup' onClick={()=>{addHotel(location)}}>{location.name}</div>
                   </Popup>
