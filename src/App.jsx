@@ -16,6 +16,15 @@ function App() {
   const [data, setData] = useState(hotels)
   const [popInfo, setPopInfo] = useState([])
 
+  useEffect(()=> {
+    const request = async() => {
+      let req = await fetch('http://127.0.0.1:3000/hotels')
+      let res = await req.json()
+      console.log(res)
+    }
+    request()
+  }, [])
+
   const addHotel = (info) => {
      if(popInfo.includes(info)) return
     setPopInfo([...popInfo, info])
@@ -34,6 +43,7 @@ function App() {
         </label>
         {
           popInfo.map((hotel) => {
+            {/* {const coordinates = hotel.coordinates.map(())} */}
             return(
               <>
                 <div style={{width: '100%', height: '35%', background: 'red'}}>
@@ -54,7 +64,6 @@ function App() {
             )
           })
         }
-        
       </div>
     {/* ----  Menu-slider Ends---- */}
 
@@ -72,7 +81,6 @@ function App() {
                   </div>
                   
                 </div>
-                
                 <ul>
                   <li>{hotel.address}</li>
                   <li>{hotel.rooms_available}</li>
