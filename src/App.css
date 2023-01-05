@@ -21,7 +21,7 @@ body .cont{
    width: 83%;
    position: absolute;
    background-color: #fff;
-   z-index: 1;
+   z-index: 2000;
    transition: 0.3s ease;
    transform: translateX(-113%);
  }
@@ -32,10 +32,10 @@ body .cont{
    display: none;
  }
 
- span {
+ .menu {
    position: absolute;
-   right: -70px;
-   top: 30px;
+   right: -90px;
+   top: 20px;
    font-size: 20px;
    border-radius: 3px;
    padding: 5px 8px;
@@ -55,3 +55,20 @@ body .cont{
    display: none;
  }
 
+ .leaflet-control{
+  z-index: 700 !important;
+ }
+ .leaflet-top{
+  z-index: 900 !important;
+ }
+ .leaflet-bottom{
+  z-index: 900 !important;
+ }
+
+
+.popup{
+  width: 100%;
+  height: 100%;
+  padding: 15px 3px;
+  cursor: pointer;
+}

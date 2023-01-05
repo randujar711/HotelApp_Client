@@ -5,8 +5,9 @@
             "name": "Motel 9 3/4",
             "broom_rating": 5,
             "address": "38 djdjd",
-            "latitude": 40.752655,
-            "longitude": -73.977296,
+            "coordinate": [
+                40.752655, -73.977296
+            ],
             "price": 300,
             "rooms": 100,
             "rooms_available": 21
@@ -16,8 +17,9 @@
             "name": "The Shrieking Shack",
             "broom_rating": 3,
             "address": "3 ojhfsf",
-            "latitude": 40.719566,
-            "longitude": -74.006612,
+            "coordinate": [
+                 41.752655, -74.977296
+            ],
             "price": 150,
             "rooms": 13,
             "rooms_available": 12
@@ -27,8 +29,9 @@
             "name": "The SlytherInn",
             "broom_rating": 4,
             "address": "48 jhdfsh",
-            "latitude": 40.769862,
-            "longitude": -73.972474,
+            "coordinate": [
+                46.752655, -75.977296
+            ],
             "price": 177,
             "rooms": 130,
             "rooms_available": 66
@@ -38,8 +41,9 @@
             "name": "The Leaky Cauldron",
             "broom_rating": 5,
             "address": "38 djdjd",
-            "latitude": 40.705554,
-            "longitude": -74.013444,
+            "coordinate": [
+                -76.977296, 44.752655
+            ],
             "price": 300,
             "rooms": 50,
             "rooms_available": 17
@@ -49,8 +53,9 @@
             "name": "Wizard's Way",
             "broom_rating": 5,
             "address": "38 djdjd",
-            "latitude": 40.711449,
-            "longitude": -74.013855,
+            "coordinate": [
+                -79.977296, 49.752655
+            ],
             "price": 127,
             "rooms": 100,
             "rooms_available": 20
@@ -60,8 +65,9 @@
             "name": "Hagrid's Quality Hut",
             "broom_rating": 5,
             "address": "38 djdjd",
-            "latitude": 40.71058,
-            "longitude": -73.9264,
+            "coordinate": [
+                 30.752655, -71.977296
+            ],
             "price": 125,
             "rooms": 200,
             "rooms_available": 0
@@ -71,8 +77,9 @@
             "name": "the 4 Broomsticks",
             "broom_rating": 2,
             "address": "38 djdjd",
-            "latitude": 40.714646,
-            "longitude": -73.996809,
+            "coordinate": [
+                20.752655, -35.977296
+            ],
             "price": 125,
             "rooms": 150,
             "rooms_available": 0
@@ -82,8 +89,9 @@
             "name": "the Night Bus",
             "broom_rating": 5,
             "address": "38 djdjd",
-            "latitude": 40.779437,
-            "longitude": -73.963244,
+            "coordinate": [
+                11.752655, -11.977296
+            ],
             "price": 200,
             "rooms": 150,
             "rooms_available": 10
