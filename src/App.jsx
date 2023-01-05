@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 //import data from './data.json'
-import {
-  MapContainer,
+import { 
+  MapContainer, 
   TileLayer,
-  Marker,
-  Popup
+  Marker, 
+  Popup 
 } from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import { hotels } from './Hotels.json'
 import './App.css'
-
 const center = [40.8116, -73.9465]   
 
 function App() {
@@ -18,20 +17,42 @@ function App() {
   const [popInfo, setPopInfo] = useState([])
 
   useEffect(()=> {
+    let ws;
     const request = async() => {
       let req = await fetch('http://127.0.0.1:3000/hotels')
       let res = await req.json()
       console.log(res)
     }
+
+    const connect = async () => {
+      ws = new WebSocket("ws://localhost:3000/cable")
+
+      ws.onopen = () => {
+        ws.send(JSON.stringify({"command": "subscribe", "identifier": "{\"channel\": \"LiveViewChannel\"}"}))
+        console.log('workiing')
+      }
+      ws.onmessage = (event) => {
+          const data = JSON.parse(event.data)
+          if (data.type === "ping"|| data.type === "welcome" || data.type === "confirm_subscription") return
+          const post = data.message?.post
+          if (post) {
+            setPosts(prevState =>[post, ...prevState])
+          } else {
+            alert(data.message.notification.message)
+          }
+        }
+    }
+    connect()
     request()
   }, [])
 
   const addHotel = (info) => {
      if(popInfo.includes(info)) return
-     setPopInfo([...popInfo, info])
+    setPopInfo([...popInfo, info])
   }
   console.log(popInfo)
   return (
+
     <div className="cont" >
 
     {/* ----  Menu-slider ---- */}
@@ -91,6 +112,7 @@ function App() {
           })
         }
       </div>
+
       <MapContainer
         center ={center}
         zoom = {10.5}
@@ -111,7 +133,9 @@ function App() {
            })
         }
       </MapContainer>
+
     </div>
   )
 }
+
 export default App
