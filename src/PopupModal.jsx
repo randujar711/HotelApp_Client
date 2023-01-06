@@ -21,7 +21,7 @@ function PopUpModal({popInfo, notifyPopup}) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>ACCLOHOTELS</Modal.Title>
+          <Modal.Title>ACCIOHOTELS</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {
