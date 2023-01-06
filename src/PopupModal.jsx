@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function PopUpModal({popInfo, notifyPopup}) {
+function PopUpModal({popInfo, delHotel}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -10,7 +10,7 @@ function PopUpModal({popInfo, notifyPopup}) {
 
   return (
     <>
-      <Button style={{background: '#c0c0c0', border: 'black', width: "70%"}} onClick={handleShow}>
+      <Button style={{background: '#c0c0c0', border: 'black', width: "100%"}} onClick={handleShow}>
         Details
       </Button>
 
@@ -53,7 +53,7 @@ function PopUpModal({popInfo, notifyPopup}) {
           {/* <Button variant="secondary" onClick={handleClose}>
             Close
           </Button> */}
-          <Button style={{background: 'rgb(34, 73, 82)', border: 'black'}} onClick={notifyPopup}>Reserve</Button>
+          <Button style={{background: 'rgb(34, 73, 82)', border: 'black'}}>Start Reservation</Button>
         </Modal.Footer>
       </Modal>
     </>
