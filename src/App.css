@@ -28,7 +28,7 @@ body .cont {
   transform: translateX(-113%);
 }
 
-input {
+.form-menu {
   -webkit-appearance: none;
   visibility: hidden;
   display: none;
